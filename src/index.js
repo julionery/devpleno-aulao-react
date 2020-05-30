@@ -6,7 +6,7 @@ import App from "./App";
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App name="DevPleno" />
   </React.StrictMode>,
   rootElement
 );
