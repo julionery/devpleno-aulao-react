@@ -12,6 +12,8 @@ export default function App(props) {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(300);
 
+  const title = <h1>{props.name}</h1>;
+
   const iniciarJogo = () => {
     setEstado("RODANDO");
     setMin(0);
@@ -22,7 +24,8 @@ export default function App(props) {
   if (estado === "ENTRADA") {
     return (
       <div className="App">
-        <h1>{props.name}</h1>
+        {title}
+        <p>Pense em um número de 0 a 300 e precione o botão.</p>
         <button onClick={iniciarJogo} className="btnLarge">
           Começar a Jogar!
         </button>
@@ -51,7 +54,7 @@ export default function App(props) {
   if (estado === "FIM") {
     return (
       <div className="App">
-        <h1>{props.name}</h1>
+        {title}
         <h3>
           Acertei o número {palpite} com {numPalpites} chutes!
         </h3>
@@ -64,7 +67,7 @@ export default function App(props) {
 
   return (
     <div className="App">
-      <h1>{props.name}</h1>
+      {title}
       <h2>O seu número é {palpite}?</h2>
       <p>
         Min: {min} / Max: {max}
